@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relative[time].js"></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_relative[time]);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>
+      dayjs.locale("pt-br");
+    </script>
+  </head>
+  <body>
+    <table width="100%">
+      <thead style="text-align: left">
+        <tr>
+          <th>Participante</th>
+          <th>Data da inscrição</th>
+          <th>Data do Check-in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Armando Quissanga</strong> <br />
+            <small>neinaldoaguinaldo13@gmail.com</small>
+          </td>
+          <td>Há 3 dias</td>
+          <td>Há 3 minutos</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  /*   const participante = {
+     nome: "Aguinaldo Quissanga",
+     email: "neinaldoaguinaldo13@gmail.com",
+     datadeinscricao: new Date(2024, 3, 10, 7, 30),
+     datadecheckin: new Date(2024, 3, 11, 9, 20),
+   };
+  */
+
+  let participantes = [
+    {
+      nome: "Aguinaldo Quissanga",
+      email: "neinaldoaguinaldo13@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Ana Quissanga",
+      email: "AnaQuiss2011@gmail.com",
+      datadeinscricao: new Date(2024, 2, 8, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Cardoso Quissanga",
+      email: "Quissanga79+@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Verónica Quissanga",
+      email: "VeroQuissanga@outlook.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Edvânia Belchior",
+      email: "EdvaniaAbel123@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Nedilson Miguel",
+      email: "Nediboy99@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Nyanni Quissanga",
+      email: "NyQuissanga@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Wladmir De Jesus",
+      email: "Wladmir79@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Etelvino Sapondia",
+      email: "EtSapondia@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+    {
+      nome: "Lucas Kunjuca",
+      email: "LucasCananayKunjuca@gmail.com",
+      datadeinscricao: new Date(2024, 3, 10, 7, 30),
+      datadecheckin: new Date(2024, 3, 11, 9, 20),
+    },
+  ];
+
+  const criarNovoParticipante = (participante) => {
+    const datadeinscricao = dayjs(Date.now()).to(participante.datadeinscricao);
+    /*const datadecheckin = dayjs(Date.now()).to(participante.datadecheckin) */
+    return `
+     <tr>
+         <td>
+           <strong>
+             ${participante.nome}
+           </strong> <br />
+           <small>
+             ${participante.email}
+           </small>
+         </td>
+         <td>
+             ${participante.datadeinscricao}
+         </td>
+         <td>
+             ${participante.datadecheckin}
+         </td>
+       </tr>
+     `;
+  };
+
+  const atualizarLista = (participantes) => {
+    let output = "";
+    for (let participante of participantes) {
+      output = output + criarNovoParticipante(participante);
+    }
+    document.querySelector("tbody").innerHTML = output;
+  };
+  atualizarLista(participantes);
+</script>
